@@ -127,7 +127,33 @@
         <h2>Our Story</h2>
         <p>We met in a small coffee shop where we both accidentally ordered the same pastry...</p>
     </section>
+<!-- Poll Section -->
+<section id="poll">
+    <h2>Wedding Poll</h2>
+    <form action="https://formspree.io/f/mblkrjlg" method="POST">
+        <!-- Question 1 -->
+        <p><strong>What's your favorite color?</strong></p>
+        <label><input type="checkbox" name="color" value="Red"> Red</label><br>
+        <label><input type="checkbox" name="color" value="Blue"> Blue</label><br>
+        <label><input type="checkbox" name="color" value="Green"> Green</label><br>
 
+        <!-- Question 2 -->
+        <p><strong>Do you prefer indoor or outdoor?</strong></p>
+        <label><input type="checkbox" name="location" value="Indoor"> Indoor</label><br>
+        <label><input type="checkbox" name="location" value="Outdoor"> Outdoor</label><br>
+
+        <!-- Question 3 -->
+        <p><strong>What's your favorite music genre?</strong></p>
+        <label><input type="checkbox" name="music" value="Pop"> Pop</label><br>
+        <label><input type="checkbox" name="music" value="Rock"> Rock</label><br>
+        <label><input type="checkbox" name="music" value="Jazz"> Jazz</label><br>
+
+        <!-- Hidden Timestamp -->
+         <!--<input type="hidden" name="_timestamp" value="">-->
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
     <!-- Gallery Section -->
     <div id="gallery">
         <img src="Photos/Photo1.jpg" alt="Wedding Photo 1">

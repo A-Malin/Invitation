@@ -1,0 +1,115 @@
+<think>
+Okay, the user wants to add a poll section to their wedding landing page. The requirements are: three questions with multiple-choice options, non-exclusive answers, and storing the responses in a text file with timestamps.
+
+First, I need to figure out how to handle form submissions on a static site since GitHub Pages doesn't support server-side code like PHP or Node.js. So the user can't directly write data to a file on the server. 
+
+Hmm, maybe using a third-party service. Oh right! Services like Formspree or Netlify Forms can handle form submissions and store the data. But the user wants the answers stored in a text file. Wait, those services might not directly create a text file, but they can send the data to an email or another endpoint.
+
+Alternatively, if the user is okay with storing data in a database, maybe using something like Firebase. But that requires more setup and might be overkill for a simple poll.
+
+Wait, the user specifically mentioned storing answers in a txt file. So maybe they need a way to collect the data and then manually download it. But how? Since GitHub Pages is static, the form submissions can't be saved directly to a file on the server.
+
+Another approach: Use a service like Formspree (which is free for small use) to handle the form submission. The user can set up an email address to receive the form data, and then download it as a CSV or JSON. But that's not a txt file. However, maybe the user can export it from there.
+
+Alternatively, if they want to store it on their own server, but since they're using GitHub Pages, that might not be possible unless they have a backend. 
+
+Wait, maybe the user is okay with storing the data in a public repository? But that would require a way to push data to the repo, which isn't straightforward without a CI/CD setup.
+
+Alternatively, use a service like Google Forms. The user can create a form, embed it on their site, and then download the responses as a CSV file. That's a simple solution.
+
+But the user might want everything self-contained. So perhaps I should suggest using Google Forms or Formspree for handling the poll data collection, even though it doesn't directly write to a txt file on the server.
+
+So, in the answer, I'll explain that with GitHub Pages, you can't directly save data to a file, but you can use third-party services. Then provide examples of how to implement this using Google Forms or Formspree.
+
+Also, need to make sure the form is non-exclusive (multiple answers per question) and includes timestamps. For the timestamp, maybe add a hidden input field with JavaScript to capture the current time when the form is submitted.
+
+Let me structure the answer step by step: first explain the limitations, then provide solutions using external services, and include code examples for both Google Forms and Formspree.
+</think>
+
+
+
+To implement a poll that stores answers in a text file (or similar), we need to use third-party services since GitHub Pages can't directly write files. Here's how to do it:
+
+---
+
+### 🧠 Limitations
+GitHub Pages is **static** - no server-side code allowed. To store data:
+1. Use external form handlers like [Formspree](https://formspree.io/) or Google Forms.
+2. Data will be stored in their systems (not directly on your repo).
+
+---
+
+### ✅ Solution: Using Formspree
+1. **Create a Formspree Account**
+   - Go to [Formspree](https://formspree.io/)
+   - Create an account and get your form endpoint URL.
+
+2. **Add the Poll HTML**
+```html
+<!-- Poll Section -->
+<section id="poll">
+    <h2>Wedding Poll</h2>
+    <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+        <!-- Question 1 -->
+        <p><strong>What's your favorite color?</strong></p>
+        <label><input type="checkbox" name="color" value="Red"> Red</label><br>
+        <label><input type="checkbox" name="color" value="Blue"> Blue</label><br>
+        <label><input type="checkbox" name="color" value="Green"> Green</label><br>
+
+        <!-- Question 2 -->
+        <p><strong>Do you prefer indoor or outdoor?</strong></p>
+        <label><input type="checkbox" name="location" value="Indoor"> Indoor</label><br>
+        <label><input type="checkbox" name="location" value="Outdoor"> Outdoor</label><br>
+
+        <!-- Question 3 -->
+        <p><strong>What's your favorite music genre?</strong></p>
+        <label><input type="checkbox" name="music" value="Pop"> Pop</label><br>
+        <label><input type="checkbox" name="music" value="Rock"> Rock</label><br>
+        <label><input type="checkbox" name="music" value="Jazz"> Jazz</label><br>
+
+        <!-- Hidden Timestamp -->
+        <input type="hidden" name="_timestamp" value="">
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+```
+
+3. **Add JavaScript for Timestamp**
+```html
+<script>
+    document.querySelector("form").addEventListener("submit", function() {
+        const timestamp = new Date().toISOString();
+        this.querySelector('input[name="_timestamp"]').value = timestamp;
+    });
+</script>
+```
+
+4. **Configure Formspree**
+   - Replace `YOUR_FORMSPREE_ENDPOINT` with your actual endpoint URL.
+   - Go to [Formspree Dashboard](https://formspree.io/) > "My forms" > select the form > copy the endpoint.
+
+---
+
+### 📁 Storing Data as a Text File
+- Formspree allows you to **download submissions as CSV/JSON** from their dashboard.
+- For automatic backups, use [Zapier](https://zapier.com) or [Make (formerly Integromat)](https://www.make.com/) to save data to Google Sheets or your cloud storage.
+
+---
+
+### 📝 Alternative: Google Forms
+1. Create a form at [Google Forms](https://forms.google.com/).
+2. Embed it on your page:
+```html
+<iframe src="YOUR_GOOGLE_FORM_URL" width="100%" height="500px"></iframe>
+```
+3. Download responses as CSV from Google Sheets.
+
+---
+
+### 📌 Notes
+- Non-exclusive answers work with `<input type="checkbox">`.
+- Timestamps are added via JavaScript.
+- For a fully self-hosted solution, you'd need a backend (e.g., Node.js + Firebase).
+
+Would you like me to help set up Formspree or Google Forms?

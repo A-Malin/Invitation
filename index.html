@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Wedding Invitation</title>
+    <title>Свадебное приглашение</title>
     <style>
         /* Basic Reset */
         * {
@@ -88,34 +88,45 @@ section.active {
 
 <header>
     <nav id="navbar">
-        <a href="#venue" class="nav-link">Venue</a>
-        <a href="#date" class="nav-link">Date</a>
-        <a href="#about" class="nav-link">About Us</a>
-        <a href="#poll" class="nav-link">Poll</a>
+        <a href="#merit" class="nav-link">Мероприятие</a>
+        <a href="#venue" class="nav-link">Место</a>
+        <a href="#date" class="nav-link">Время</a>
+        <a href="#about" class="nav-link">Наша история</a>
+        <a href="#poll" class="nav-link">Опросник</a>
     </nav>
 </header>
 
 <main>
     <!-- Venue Section -->
-    <section id="venue" class="active">
-        <h2 style="margin-bottom: 20px;">The Garden Chapel</h2>
-        <p>We're getting married in the beautiful Willow Creek Garden, where our ceremony will take place beneath an ancient oak tree. The venue features manicured lawns, a stone fountain, and a rustic chapel made of reclaimed wood.</p>
-                <img src="Photos/Photo1.jpg" alt="Wedding Photo 4" style="width: 300px; height: 200px; object-fit: cover;">
-        <p>Complimentary shuttle service will be available from the nearby parking lot. The venue is fully accessible with ramps and designated parking spaces for guests with mobility needs.</p>
+    <section id="merit" class="active">
+        <h2 style="margin-bottom: 20px;">Свадьба Андрея Малиновского и Анны Ляховой</h2>
+        <p>Дорогие наши друзья, мы рады пригласить Вас быть с нами в этот счастливый и важный день нашей жизни!</p>
+                <img src="Photos/5451729764546117447.jpg" alt="Wedding Photo 1" style="width: 300px; height: 200px; object-fit: cover;">
+        <p>Мы официально станем мужей и женой, чтобы дальше идти по жизни вместе. Будет весело, лампово и вкусно!</p>
     </section>
+
+    <section id="venue">
+        <h2 style="margin-bottom: 20px;">Ресторан "У фонтана"</h2>
+        <p>Свадьбу юудем отмечать у каларытным "Беларускiм дворыку" ресторана "У фонтана"</p>
+                <img src="Photos/PhotoEntrance.jpg" alt="Venue Photo 1" style="width: 300px; height: 200px; object-fit: cover;">
+               <img src="Photos/PhotoBelarusDvorik.jpg" alt="Venue Photo 2" style="width: 300px; height: 200px; object-fit: cover;">
+<img src="Photos/PhotoHutAtNight.jpg" alt="Уночы таксама прыгожа!" style="width: 300px; height: 200px; object-fit: cover;">
+
+                <p>Он находится на пересечении улицы Амураторской и проспекта Машерова, в 9 минутах пешком от станции метро Молодежная.</p>
+ <img src="Photos/PhotoMap.jpg" alt="Найди сокровище" style="width: 300px; height: 200px; object-fit: cover;">
+
+            </section>
 
     <!-- Date Section -->
     <section id="date">
-        <h2 style="margin-bottom: 20px;">Saturday, June 15th</h2>
-        <p>We're getting married on a beautiful summer Saturday at 4:00 PM. The ceremony will be followed by a reception in the garden with live music, gourmet dining, and dancing under the stars.</p>
-        <p>Please arrive by 3:30 PM for photos. The sunset ceremony will provide perfect natural lighting for memories. Black-tie attire is requested for the evening celebration.</p>
+        <h2 style="margin-bottom: 20px;">Суббота, 16 августа 2025 года</h2>
+        <p>Стартуем в 18 часов, веселимся до полуночи!</p>
     </section>
 
     <!-- About Us Section -->
     <section id="about">
-        <h2 style="margin-bottom: 20px;">Our Story</h2>
-        <p>We met in a small coffee shop where we both accidentally ordered the same pastry. What began as a friendly conversation about pastries has grown into a beautiful journey of love and partnership.</p>
-        <p>When we're not exploring new restaurants or hiking local trails, you'll find us curled up with a good book or planning our next adventure. Our pets, a mischievous golden retriever named Max, will be joining us on the big day!</p>
+        <h2 style="margin-bottom: 20px;">Наша история</h2>
+        <p>Мы, Андрей и Аня, три года вместе. Познакомились в 500 метрах от места свадьбы)</p>
     </section>
 <!-- Poll Section -->
 <section id="poll">
@@ -126,18 +137,19 @@ section.active {
     <input class="fs-input" id="name" name="name" required />
   </div>
         <!-- Question 1 -->
-        <p><strong>What's your favorite color?</strong></p>
-        <label><input type="checkbox" name="color" value="Red"> Red</label><br>
-        <label><input type="checkbox" name="color" value="Blue"> Blue</label><br>
-        <label><input type="checkbox" name="color" value="Green"> Green</label><br>
-
-        <!-- Question 2 -->
-        <p><strong>Do you prefer indoor or outdoor?</strong></p>
-        <label><input type="checkbox" name="location" value="Indoor"> Indoor</label><br>
-        <label><input type="checkbox" name="location" value="Outdoor"> Outdoor</label><br>
+        <p><strong>Что бы Вы хотели видеть в своем бокале на празднике?</strong></p>
+        <label><input type="checkbox" name="drink" value="Red"> Ром</label><br>
+        <label><input type="checkbox" name="drink" value="Blue"> Коньяк</label><br>
+        <label><input type="checkbox" name="drink" value="Green"> Водочка</label><br>
+        <label><input type="checkbox" name="drink" value="Green"> Виски</label><br>
+         <label><input type="checkbox" name="drink" value="Green"> Джин</label><br>
+        <label><input type="checkbox" name="drink" value="Green"> Tequila!</label><br>
+       <label><input type="checkbox" name="drink" value="Green"> Вино белое</label><br>
+        <label><input type="checkbox" name="drink" value="Green"> Вино красное</label><br>
+        <label><input type="checkbox" name="drink" value="Green"> Пить не буду</label><br>
 
         <!-- Question 3 -->
-        <p><strong>What's your favorite music genre?</strong></p>
+        <p><strong>Какая Ваша любимая музыка/исполнитель?</strong></p>
         <label><input type="checkbox" name="music" value="Pop"> Pop</label><br>
         <label><input type="checkbox" name="music" value="Rock"> Rock</label><br>
         <label><input type="checkbox" name="music" value="Jazz"> Jazz</label><br>
@@ -149,7 +161,7 @@ section.active {
       name="message"
       required
     ></textarea>
-    <p class="fs-description">Персональные пожелания? (пищевые аллергии, фобии, что нам следует знать)</p>
+    <p class="fs-description">Персональные пожелания? (пищевые аллергии или антипатии, фобии, в общем, что нам следует знать, чтобы сделать Вам комфортно)</p>
   </div>
         <!-- Hidden Timestamp -->
         <input type="hidden" name="_timestamp" value="">

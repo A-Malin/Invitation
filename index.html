@@ -52,10 +52,27 @@ section {
 }
 
 section.active {
+        margin-top: 80px; /* Adjust based on actual navbar height */
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Responsive Image Scaling */
+section img{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Optional: Center images in their containers */
+section img {
+    display: block;
+    margin: 0 auto;
+}
+
+        
 #gallery {
     display: flex;
     gap: 20px;
@@ -101,19 +118,19 @@ section.active {
     <section id="merit" class="active">
         <h2 style="margin-bottom: 20px;">Свадьба Андрея Малиновского и Анны Ляховой</h2>
         <p>Дорогие наши друзья, мы рады пригласить Вас быть с нами в этот счастливый и важный день нашей жизни!</p>
-                <img src="Photos/5451729764546117447.jpg" alt="Wedding Photo 1" style="width: 300px; height: 200px; object-fit: cover;">
+                <img src="Photos/5451729764546117447.jpg" alt="Wedding Photo 1" >
         <p>Мы официально станем мужей и женой, чтобы дальше идти по жизни вместе. Будет весело, лампово и вкусно!</p>
     </section>
 
     <section id="venue">
         <h2 style="margin-bottom: 20px;">Ресторан "У фонтана"</h2>
         <p>Свадьбу юудем отмечать у каларытным "Беларускiм дворыку" ресторана "У фонтана"</p>
-                <img src="Photos/PhotoEntrance.jpg" alt="Venue Photo 1" style="width: 300px; height: 200px; object-fit: cover;">
-               <img src="Photos/PhotoBelarusDvorik.jpg" alt="Venue Photo 2" style="width: 300px; height: 200px; object-fit: cover;">
-<img src="Photos/PhotoHutAtNight.jpg" alt="Уночы таксама прыгожа!" style="width: 300px; height: 200px; object-fit: cover;">
+                <img src="Photos/PhotoEntrance.jpg" alt="Venue Photo 1" >
+               <img src="Photos/PhotoBelarusDvorik.jpg" alt="Venue Photo 2" >
+<img src="Photos/PhotoHutAtNight.jpg" alt="Уночы таксама прыгожа!" >
 
                 <p>Он находится на пересечении улицы Амураторской и проспекта Машерова, в 9 минутах пешком от станции метро Молодежная.</p>
- <img src="Photos/PhotoMap.jpg" alt="Найди сокровище" style="width: 300px; height: 200px; object-fit: cover;">
+ <img src="Photos/PhotoMap.png" alt="Найди сокровище" >
 
             </section>
 
@@ -175,9 +192,9 @@ section.active {
         <img src="Photos/Photo1.jpg" alt="Wedding Photo 4" style="width: 300px; height: 200px; object-fit: cover;">
     </div>
 </main>
-
-<audio id="background-music" src="Sound/107_Wedding Day.mp3" autoplay></audio>
-
+<!--
+<audio id="background-music" src="Sound/1.mp3" autoplay></audio>
+-->
 <script>
 // Navigation and ScrollSpy
 document.addEventListener('DOMContentLoaded', () => {
@@ -226,6 +243,35 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
+    // Music Shuffle
+const tracks = ['Sound/1.mp3', 'Sound/2.mp3', 'Sound/3.mp3'];
+let currentTrack = 0;
+
+function playNext() {
+    const audio = new Audio(tracks[currentTrack]);
+    audio.play();
+    
+    // Shuffle track order after each play
+    currentTrack = (currentTrack + 1) % tracks.length;
+}
+
+// Gallery Auto-Load
+const galleryContainer = document.createElement('div');
+galleryContainer.id = 'gallery';
+
+// Load all JPGs from Photos folder (assuming known filenames)
+const images = ['Photos/Photo1.jpg', 'Photos/5451729764546117447.jpg', 'Photos/5451729764546117450.jpg', 'Photos/5451729764546117453.jpg, 'Photos/5451873396842428503.jpg','Photos/5451873396842428504.jpg','Photos/5451873396842428508.jpg, 'Photos/5451873396842428511.jpg, 'Photos/5451873396842428512.jpg,'Photos/5451873396842428513.jpg,'Photos/5451873396842428514.jpg,'Photos/5451873396842428517.jpg']; // Add all your image paths here
+
+images.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    galleryContainer.appendChild(img);
+});
+
+// Append gallery to each section
+document.querySelectorAll('section').forEach(section => {
+    section.insertBefore(galleryContainer.cloneNode(true), section.firstChild);
 });
 </script>
 </body>

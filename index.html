@@ -1,225 +1,267 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Свадебное приглашение</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <title>Свадебное приглашение</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #fff;
-            padding: 20px;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      padding: 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        nav {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-        }
+    nav {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
-        nav a:hover {
-            color: #e67e22;
-        }
+    nav a:hover {
+      color: #e67e22;
+    }
 
-        section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease-out;
-            padding: 60px 20px;
-        }
+    main {
+      padding-top: 80px; /* Match header height */
+    }
 
-        section.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+      padding: 60px 20px;
+    }
 
-        /* Gallery styles remain unchanged */
-        #gallery {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 40px 20px;
-        }
-        #gallery img {
-            width: 300px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        #gallery img:hover {
-            transform: scale(1.05);
-        }
+    section.active {
+      margin-top: 80px;
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        nav a.active {
-            color: #e67e22;
-            text-decoration: underline;
-        }
-    </style>
+    /* Responsive Image Scaling */
+    section img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      margin: 20px auto;
+    }
+
+    #gallery {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 40px 20px;
+    }
+
+    #gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    #gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    nav a.active {
+      color: #e67e22;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <nav id="navbar">
-        <a href="#merit" class="nav-link">Мероприятие</a>
-        <a href="#venue" class="nav-link">Место</a>
-        <a href="#date" class="nav-link">Время</a>
-        <a href="#about" class="nav-link">Наша история</a>
-        <a href="#poll" class="nav-link">Опросник</a>
-    </nav>
+  <nav id="navbar">
+    <a href="#merit" class="nav-link">Мероприятие</a>
+    <a href="#venue" class="nav-link">Место</a>
+    <a href="#date" class="nav-link">Время</a>
+    <a href="#about" class="nav-link">Наша история</a>
+    <a href="#poll" class="nav-link">Опросник</a>
+  </nav>
 </header>
 
 <main>
-    <!-- Venue Section -->
-    <section id="merit" class="active">
-        <h2>Свадьба Андрея Малиновского и Анны Ляховой</h2>
-        <p>Дорогие наши друзья, мы рады пригласить Вас быть с нами в этот счастливый и важный день нашей жизни!</p>
-        <img src="Photos/5451729764546117447.jpg" alt="Wedding Photo 1">
-        <p>Мы официально станем мужем и женой, чтобы дальше идти по жизни вместе. Будет весело, лампово и вкусно!</p>
-    </section>
+  <!-- Venue Section -->
+  <section id="merit" class="active">
+    <h2 style="margin-bottom: 20px;">Свадьба Андрея Малиновского и Анны Ляховой</h2>
+    <p>Дорогие наши друзья, мы рады пригласить Вас быть с нами в этот счастливый и важный день нашей жизни!</p>
+    <img src="Photos/5451729764546117447.jpg" alt="Wedding Photo 1">
+    <p>Мы официально станем мужем и женой, чтобы дальше идти по жизни вместе. Будет весело, лампово и вкусно!</p>
+  </section>
 
-    <section id="venue">
-        <h2>Ресторан "У фонтана"</h2>
-        <p>Свадьбу будем отмечать у калоритным "Беларускiм дворыку" ресторана "У фонтана"</p>
-        <img src="Photos/PhotoEntrance.jpg" alt="Venue Photo 1">
-        <img src="Photos/PhotoBelarusDvorik.jpg" alt="Venue Photo 2">
-        <img src="Photos/PhotoHutAtNight.jpg" alt="Уночы таксама прыгожа!">
-        <p>Он находится на пересечении улицы Амураторской и проспекта Машерова, в 9 минутах пешком от станции метро Молодежная.</p>
-        <img src="Photos/PhotoMap.png" alt="Найди сокровище">
-    </section>
+  <!-- Venue Section -->
+  <section id="venue">
+    <h2 style="margin-bottom: 20px;">Ресторан "У фонтана"</h2>
+    <p>Свадьбу юудем отмечать у каларытным "Беларускiм дворыку" ресторана "У фонтана"</p>
+    <img src="Photos/PhotoEntrance.jpg" alt="Venue Photo 1">
+    <img src="Photos/PhotoBelarusDvorik.jpg" alt="Venue Photo 2">
+    <img src="Photos/PhotoHutAtNight.jpg" alt="Уночы таксама прыгожа!">
+    <p>Он находится на пересечении улицы Амураторской и проспекта Машерова, в 9 минутах пешком от станции метро Молодежная.</p>
+    <img src="Photos/PhotoMap.png" alt="Найди сокровище">
+  </section>
 
-    <!-- Date Section -->
-    <section id="date">
-        <h2>Суббота, 16 августа 2025 года</h2>
-        <p>Стартуем в 18 часов, веселимся до полуночи!</p>
-    </section>
+  <!-- Date Section -->
+  <section id="date">
+    <h2 style="margin-bottom: 20px;">Суббота, 16 августа 2025 года</h2>
+    <p>Стартуем в 18 часов, веселимся до полуночи!</p>
+  </section>
 
-    <!-- About Us Section -->
-    <section id="about">
-        <h2>Наша история</h2>
-        <p>Мы, Андрей и Аня, три года вместе. Познакомились в 500 метрах от места свадьбы)</p>
-    </section>
-    <!-- Gallery Section (corrected) -->
-    <h2>Наши счастливые моменты</h2>
-    <div id="gallery">
-        <!-- Images will be loaded dynamically via JavaScript -->
-    </div>
-    <!-- Poll Section -->
-    <section id="poll">
-        <h2>Wedding Poll</h2>
-        <form action="https://formspree.io/f/mblkrjlg" method="POST">
-            <!-- ... (existing form fields) -->
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+  <!-- About Us Section -->
+  <section id="about">
+    <h2 style="margin-bottom: 20px;">Наша история</h2>
+    <p>Мы, Андрей и Аня, три года вместе. Познакомились в 500 метрах от места свадьбы)</p>
+  </section>
 
+  <!-- Poll Section -->
+  <section id="poll">
+    <h2>Wedding Poll</h2>
+    <form action="https://formspree.io/f/mblkrjlg" method="POST">
+      <div class="fs-field">
+        <label class="fs-label" for="name">Имя и Фамилия</label>
+        <input class="fs-input" id="name" name="name" required />
+      </div>
 
+      <!-- Question 1 -->
+      <p><strong>Что бы Вы хотели видеть в своем бокале на празднике?</strong></p>
+      <label><input type="checkbox" name="drink" value="Red"> Ром</label><br>
+      <label><input type="checkbox" name="drink" value="Blue"> Коньяк</label><br>
+      <label><input type="checkbox" name="drink" value="Green"> Водочка</label><br>
+      <label><input type="checkbox" name="drink" value="Green"> Виски</label><br>
+      <label><input type="checkbox" name="drink" value="Green"> Джин</label><br>
+      <label><input type="checkbox" name="drink" value="Green"> Tequila!</label><br>
+      <label><input type="checkbox" name="drink" value="Green"> Вино белое</label><br>
+      <label><input type="checkbox" name="drink" value="Green"> Вино красное</label><br>
+      <label><input type="checkbox" name="drink" value="Green"> Пить не буду</label><br>
+
+      <!-- Question 3 -->
+      <p><strong>Какая Ваша любимая музыка/исполнитель?</strong></p>
+      <label><input type="checkbox" name="music" value="Pop"> Pop</label><br>
+      <label><input type="checkbox" name="music" value="Rock"> Rock</label><br>
+      <label><input type="checkbox" name="music" value="Jazz"> Jazz</label><br>
+
+      <div class="fs-field">
+        <label class="fs-label" for="message">Message</label>
+        <textarea
+          class="fs-textarea"
+          id="message"
+          name="message"
+          required
+        ></textarea>
+        <p class="fs-description">Персональные пожелания? (пищевые аллергии или антипатии, фобии, в общем, что нам следует знать, чтобы сделать Вам комфортно)</p>
+      </div>
+
+      <!-- Hidden Timestamp -->
+      <input type="hidden" name="_timestamp" value="">
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Gallery Section -->
+  <div id="gallery"></div>
 </main>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('header');
+  const header = document.querySelector('header');
 
-    // Navigation functionality
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+  // Navigation functionality
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
 
-            // Remove active class from all sections
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.remove('active');
-            });
+      // Remove active class from all sections
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
 
-            const target = document.querySelector(this.getAttribute('href'));
-            target.classList.add('active');
+      const target = document.querySelector(this.getAttribute('href'));
+      target.classList.add('active');
 
-            // Scroll to top of the section (adjusted for fixed header)
-            const headerHeight = header.offsetHeight;
-            window.scrollTo({
-                top: target.offsetTop - headerHeight,
-                behavior: 'smooth'
-            });
-        });
+      // Scroll to top of the section (adjusted for fixed header)
+      const headerHeight = header.offsetHeight;
+      window.scrollTo({
+        top: target.offsetTop - headerHeight,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // ScrollSpy functionality
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    let currentSection = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (window.scrollY >= sectionTop - 100 && 
+          window.scrollY < sectionTop + sectionHeight - 100) {
+        currentSection = section.id;
+      }
     });
 
-    // ScrollSpy functionality
-    window.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('section');
-        let currentSection = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            if (window.scrollY >= sectionTop - 100 && 
-                window.scrollY < sectionTop + sectionHeight - 100) {
-                currentSection = section.id;
-            }
-        });
-
-        // Update active navigation link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === currentSection) {
-                link.classList.add('active');
-            }
-        });
+    // Update active navigation link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').substring(1) === currentSection) {
+        link.classList.add('active');
+      }
     });
+  });
 
-    // Gallery Auto-Load (unchanged)
-    const gallery = document.getElementById('gallery');
-    const images = [
-        'Photos/Photo1.jpg',
-        'Photos/5451729764546117447.jpg',
-        'Photos/5451729764546117450.jpg',
-        'Photos/5451729764546117453.jpg',
-        'Photos/5451873396842428503.jpg',
-        'Photos/5451873396842428504.jpg',
-        'Photos/5451873396842428508.jpg',
-        'Photos/5451873396842428511.jpg',
-        'Photos/5451873396842428512.jpg',
-        'Photos/5451873396842428513.jpg',
-        'Photos/5451873396842428514.jpg',
-        'Photos/5451873396842428517.jpg',
-                'Photos/5451873396842428519.jpg',
-                'Photos/5451873396842428520.jpg',
-                'Photos/5451873396842428521.jpg',
-                'Photos/5451873396842428522.jpg',
-                'Photos/5451873396842428526.jpg',
-                'Photos/5451873396842428527.jpg'
-    ];
+  // Gallery Auto-Load
+  const gallery = document.getElementById('gallery');
+  const images = [
+    'Photos/Photo1.jpg',
+    'Photos/5451729764546117447.jpg',
+    'Photos/5451729764546117450.jpg',
+    'Photos/5451729764546117453.jpg',
+    'Photos/5451873396842428503.jpg',
+    'Photos/5451873396842428504.jpg',
+    'Photos/5451873396842428508.jpg',
+    'Photos/5451873396842428511.jpg',
+    'Photos/5451873396842428512.jpg',
+    'Photos/5451873396842428513.jpg',
+    'Photos/5451873396842428514.jpg',
+    'Photos/5451873396842428517.jpg'
+  ];
 
-    images.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        gallery.appendChild(img);
-    });
+  images.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    gallery.appendChild(img);
+  });
 });
 </script>
 </body>
 </html>
-

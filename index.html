@@ -49,7 +49,7 @@
     }
 
     section {
-      opacity: 0;
+      opacity: 1;
       transform: translateY(30px);
       transition: all 1s ease-out;
       padding: 60px 20px;
@@ -98,9 +98,9 @@
 
     /* Countdown Timer */
     .countdown {
-      font-size: 24px;
+      font-size: 28px;
       margin: 40px auto;
-      max-width: 300px;
+      max-width: 400px;
       text-align: center;
       background: rgba(255, 255, 255, 0.9);
       padding: 20px;
@@ -147,6 +147,7 @@
   <section id="date">
     <h2 style="margin-bottom: 20px;">Суббота, 16 августа 2025 года</h2>
     <p>Стартуем в 18 часов, веселимся до полуночи!</p>
+        <img src="Photos/Photo21.png" alt="Party mood">
   </section>
 
   <!-- About Us Section -->
@@ -179,6 +180,7 @@
       <label><input type="checkbox" name="drink" value="Green"> Tequila!</label><br>
       <label><input type="checkbox" name="drink" value="Green"> Вино белое</label><br>
       <label><input type="checkbox" name="drink" value="Green"> Вино красное</label><br>
+            <label><input type="checkbox" name="drink" value="Green"> Вино розовое</label><br>
       <label><input type="checkbox" name="drink" value="Green"> Пить не буду</label><br>
 
       <!-- Question 3 -->
@@ -186,9 +188,10 @@
       <label><input type="checkbox" name="music" value="Pop"> Pop</label><br>
       <label><input type="checkbox" name="music" value="Rock"> Rock</label><br>
       <label><input type="checkbox" name="music" value="Jazz"> Jazz</label><br>
+            <label><input type="checkbox" name="music" value="Jazz"> Другое</label><br>
 
       <div class="fs-field">
-        <label class="fs-label" for="message">Message</label>
+        <label class="fs-label" for="message">Писать сюда</label>
         <textarea
           class="fs-textarea"
           id="message"
@@ -261,18 +264,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Gallery Auto-Load
   const gallery = document.getElementById('gallery');
   const images = [
-    'Photos/Photo1.jpg',
-    'Photos/5451729764546117447.jpg',
-    'Photos/5451729764546117450.jpg',
-    'Photos/5451729764546117453.jpg',
-    'Photos/5451873396842428503.jpg',
-    'Photos/5451873396842428504.jpg',
-    'Photos/5451873396842428508.jpg',
-    'Photos/5451873396842428511.jpg',
-    'Photos/5451873396842428512.jpg',
-    'Photos/5451873396842428513.jpg',
-    'Photos/5451873396842428514.jpg',
-    'Photos/5451873396842428517.jpg'
+    'Photos/11.jpg',
+    'Photos/12.jpg',
+    'Photos/13.jpg',
+    'Photos/14.jpg',
+    'Photos/15.jpg',
+    'Photos/16.jpg',
+    'Photos/17.jpg',
+    'Photos/18.jpg'
   ];
 
   images.forEach(src => {

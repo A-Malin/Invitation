@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <title>Свадебное приглашение</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* Base Font Size */
     body {
       font-family: 'Segoe UI', sans-serif;
       line-height: 1.6;
+      font-size: 18px; /* Larger default font size */
       scroll-behavior: smooth;
+      background-image: url('Images/back.jpg'); /* Custom background image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
 
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.95);
       padding: 20px;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -37,6 +37,7 @@
       color: #333;
       font-weight: bold;
       transition: color 0.3s;
+      font-size: 18px; /* Larger navigation links */
     }
 
     nav a:hover {
@@ -94,6 +95,17 @@
       color: #e67e22;
       text-decoration: underline;
     }
+
+    /* Countdown Timer */
+    .countdown {
+      font-size: 24px;
+      margin: 40px auto;
+      max-width: 300px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -109,6 +121,9 @@
 </header>
 
 <main>
+  <!-- Countdown Timer -->
+  <div class="countdown" id="countdown"></div>
+
   <!-- Venue Section -->
   <section id="merit" class="active">
     <h2 style="margin-bottom: 20px;">Свадьба Андрея Малиновского и Анны Ляховой</h2>
@@ -261,7 +276,33 @@ document.addEventListener('DOMContentLoaded', () => {
     img.src = src;
     gallery.appendChild(img);
   });
+
+  // Countdown Timer (August 16, 2025 at 12:40 UTC)
+  function updateCountdown() {
+    const targetDate = new Date("2025-08-16T12:40:00Z").getTime();
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      document.getElementById('countdown').innerHTML = "Свадьба уже началась!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('countdown').innerHTML = `
+      <strong>До свадьбы:</strong><br>
+      ${days} дн. ${hours} ч. ${minutes} мин. ${seconds} с.
+    `;
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown(); // Initial call
 });
 </script>
 </body>
 </html>
+

@@ -80,8 +80,10 @@
     }
 
     #gallery img {
-    width: 100%;      /* Full width on small screens */
-    max-width: 100%;
+  width: auto;         /* Let image scale naturally */
+  height: auto;        /* Maintain original aspect ratio */
+  max-width: 100%;     /* Prevent overflow in container */
+  object-fit: contain; /* Optional: Ensure image fits within container without distortion */
     margin: 5px 0;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);

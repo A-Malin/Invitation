@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Свадебное приглашение</title>
   <style>
     /* Base Font Size */
@@ -105,6 +106,76 @@
       background: rgba(255, 255, 255, 0.9);
       padding: 20px;
       border-radius: 10px;
+    }
+
+    /* Responsive Typography */
+    @media (max-width: 600px) {
+      body {
+        font-size: 20px; /* Slightly larger base font */
+      }
+      
+      nav a {
+        font-size: 18px !important; /* Ensure navigation links are tap-friendly */
+        padding: 15px 10px;
+      }
+      
+      .countdown {
+        font-size: 24px !important; /* Larger countdown text */
+      }
+      
+      /* Form Element Enhancements */
+      .fs-field, .fs-description {
+        font-size: 18px !important;
+      }
+      
+      input[type="checkbox"], 
+      input[type="text"], 
+      textarea {
+        font-size: 18px !important;
+        padding: 12px !important;
+        height: auto !important;
+      }
+      
+      /* Make checkboxes more tap-friendly */
+      .fs-field label {
+        min-height: 40px !important;
+        line-height: 40px !important;
+      }
+      
+      /* Ensure form elements are wide enough */
+      .fs-input, .fs-textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      /* Button size adjustment */
+      button[type="submit"] {
+        font-size: 20px !important;
+        padding: 15px !important;
+      }
+    }
+    
+    /* Additional mobile layout fixes */
+    @media (max-width: 480px) {
+      header {
+        padding: 15px;
+      }
+      
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+      
+      #gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      #gallery img {
+        width: 45% !important;
+        margin: 5px !important;
+      }
     }
   </style>
 </head>
@@ -308,4 +379,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-

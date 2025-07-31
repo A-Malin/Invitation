@@ -72,15 +72,17 @@
     #gallery {
       display: flex;
       gap: 20px;
-      overflow-x: auto;
+    width: 100%;      /* Full width on small screens */
+    max-width: 100%;
+    margin: 5px 0;
       scroll-behavior: smooth;
       padding: 40px 20px;
     }
 
     #gallery img {
-      width: 500px;
-      height: 400px;
-      object-fit: contain;
+    width: 100%;      /* Full width on small screens */
+    max-width: 100%;
+    margin: 5px 0;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: transform 0.3s;

@@ -27,19 +27,17 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    nav {
-      display: flex;
-      gap: 30px;
-      justify-content: center;
-    }
+  nav {
+    display: flex;
+    gap: 20px; /* Reduced spacing between items */
+    justify-content: center;
+    padding: 15px 20px; /* Slightly reduced padding */
+  }
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      transition: color 0.3s;
-      font-size: 18px; /* Larger navigation links */
-    }
+  nav a {
+    font-size: 16px; /* Slightly smaller text size */
+    padding: 8px 12px; /* Reduced padding for compactness */
+  }
 
     nav a:hover {
       color: #e67e22;
@@ -89,7 +87,7 @@
     }
 
     #gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.5);
     }
 
     nav a.active {
@@ -109,15 +107,17 @@
     }
 
     /* Responsive Typography */
-    @media (max-width: 600px) {
-      body {
-        font-size: 20px; /* Slightly larger base font */
-      }
-      
-      nav a {
-        font-size: 18px !important; /* Ensure navigation links are tap-friendly */
-        padding: 15px 10px;
-      }
+  @media (max-width: 720px) {
+    nav {
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    nav a {
+      font-size: 16px !important; /* Maintain consistency on mobile */
+      padding: 10px 15px;
+    }
       
       .countdown {
         font-size: 24px !important; /* Larger countdown text */
